@@ -15,17 +15,20 @@ const sites = [
 ];
 
 const container = document.querySelector('.container');
-
-console.log(Object.values(sites))
+container.style.display = "flex";
 
 sites.forEach(function (site) {
-  // console.log(site["logo"])
   const linkDiv = document.createElement('div');
   const link = document.createElement('a');
   const linkImage = document.createElement('img');
+  linkDiv.style.display = "flex";
+  linkDiv.style.width = "100%"
+  linkDiv.style.justifyContent = "center";
+  linkDiv.style.alignItems = "center";
   link.setAttribute('href', site["address"])
   linkImage.setAttribute('src', site["logo"])
-  console.log(linkImage)
+  linkImage.style.width = "100%";
+  link.style.width = "50%";
   link.appendChild(linkImage);
   linkDiv.appendChild(link);
   container.appendChild(linkDiv);
